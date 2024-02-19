@@ -1,0 +1,163 @@
+.cabecalho__menu-hamburguer {
+    width: 24px;
+    height: 24px;
+    background-image: url("../img/Menu.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    display: inline-block;
+}
+
+.cabecalho {
+    background-color: var(--cor-do-cabecalho);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative; /* comando para liberar a função de "top:100%" no .lista-menu. Mostrando a lista do menu 100% fora do cabeçalho */
+}
+
+.container {
+    display: flex;
+    align-items: center;
+}
+
+.container__botao:checked~.lista-menu { /* se o botão estiver clicado mostra a ".lista-menu"*/
+    display: block;
+}
+
+.container__botao:checked~.container__rotulo>.cabecalho__menu-hamburguer {
+    background-image: url(../img/Menu-Aberto.svg);
+}
+
+.container__botao:checked~.container__rotulo {
+    background: var(--fundo-degrade);
+    padding: 0.5em;
+}
+
+.container__botao {
+    display: none;
+}
+
+.lista-menu {
+    display: none;
+    position: absolute;
+    top: 100%; /* comando para a lista do menu ficar fora do cabeçalho do site */
+    width: 60vw;
+}
+
+.lista-menu__titulo, .lista-menu__itens {
+    padding: 1em;
+    background-color: var(--cor-do-cabecalho);
+}
+
+.lista-menu__titulo {
+    color: var(--cor-titulo);
+    font-weight: 700;
+}
+
+.lista-menu__itens__link {
+    background: var(--fundo-degrade);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-transform: uppercase; /* para deixar as letras maiuscula */
+    font-weight: 400;
+}
+.container__imagem {
+    padding: 0.2em;
+
+}
+
+.container__titulo {
+    display: none;
+}
+
+.opcoes {
+    display: none;
+}
+
+.container__texto {
+    display: none;
+}
+
+@media screen and (min-width: 1024px) {
+    .container__titulo,
+    .container__titulo--negrito {
+        font-family: var(--font-secundaria);
+        font-size: 30px;
+    }
+    
+    .container__titulo {
+        display: block;
+    }
+
+    .container__titulo--negrito {
+        font-weight: 700;
+    }
+    .opcoes {
+        display: flex;    
+    }
+
+    .opcoes__item {
+        padding: 2em 1em;
+        text-decoration: none;
+        font-family: var(--font-principal);
+        font-size: 16px;
+        font-weight: 400;
+    }
+    
+    .container__imagem-favorito {
+        display: none;
+    }
+    
+    .cabecalho__menu-hamburguer {
+        display: none;
+    }
+
+    .opcoes-menu__botao:checked~.lista-menu {
+        display: block;
+        width: auto;
+    }
+    .opcoes-menu__botao {
+        display: none;
+    }
+    .opcoes-menu__botao:checked~.opcoes__rotulo>.opcoes__item {
+        background: var(--fundo-degrade);
+        color: var(--cor-do-cabecalho);
+    }
+    
+    .lista-menu__itens:hover {
+        background: var(--fundo-degrade);
+    }
+    .lista-menu__itens:hover>.lista-menu__itens__link {
+        -webkit-text-fill-color: var(--cor-do-cabecalho);
+        text-decoration: none;
+    }
+
+
+} 
+
+
+
+@media screen and (min-width: 1728px) {
+    .container__link {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: var(--cor-preta);
+        margin-right: 1em;
+    }
+    .container__texto {
+        display: block;
+    }
+    .container__imagem-perfil {
+        margin-right: 1em;
+    }
+    .container__imagem {
+        margin: 0 0.5em 0 2em;
+    }
+    .opcoes {
+        margin-right: 35em;
+    }
+}
+
+
